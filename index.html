@@ -4,6 +4,70 @@
         <meta charset="utf-8">
         <meta name="description" content="Note Taking Application">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Note Taking Application</title>
+        <title>Note Taking App</title>
+        <!-- Style Css File -->
+        <link rel="stylesheet" href="./style.css">
+        <!-- Font Awesome Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     </head>
+    <body>
+        <!-- Start Note Taking -->
+        <section id="note-taking">
+            <div class="container">
+                <!-- Note Taking Container -->
+                <div class="note-taking-container">
+                    <!-- Title -->
+                    <div class="title">
+                        <h1 class="heading">keep your notes</h1>
+                        <p>Write and keep your notes!</p>
+                    </div>
+
+                    <!-- Note Area -->
+                    <div class="note-area">
+                        <!-- Heading -->
+                        <h3 class="heading">add a new note:</h3>
+                        <!-- Note Title -->
+                        <div class="note-title">
+                            <input type="text" id="note_title"
+                            name="Name title" placeholder="Title Of The Note">
+                            <!-- Error Message -->
+                            <!-- <ul class="error-msg">
+                                <li></li>
+                            </ul> -->
+                        </div>
+
+                        <!-- Note Content -->
+                        <div class="note-content">
+                            <textarea name="The Note" id="note_content"
+                            placeholder="Write Your Note Here.."></textarea>
+                            <!-- Error Message -->
+                            <ul class="error-msg">
+                                <li></li>
+                            </ul>
+                        </div>
+
+                        <!-- Add Note Button -->
+                        <button class="btn add-note">
+                            <i class="fas fa-plus"></i>
+                            <span>add note</span>
+                        </button>
+                    </div>
+
+                    <!-- Notes Container -->
+                    <div class="notes-container">
+                    </div>
+
+                    <!-- Delete All Notes Btn -->
+                    <button id="delete-all" class="btn">
+                        <i class="fas fa-trash"></i>
+                        <span>delete all</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- End Note Taking -->
+<!--===============================================-->
+        <!-- App Js File -->
+        <script src="./app.js"></script>
+    </body>
 </html>

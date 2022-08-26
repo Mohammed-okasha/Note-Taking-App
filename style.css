@@ -1,6 +1,194 @@
+/* Variables */
+:root {
+    --main-color: orangered;
+    --black: #202020    ;
+    --black-50: #777;
+    --light: rgb(0, 0, 0, 0.2);
+    --white: #fff;
+    --trans: 0.3s;
+}
+
 /* Global Rules */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Import Cairo Font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&display=swap');
+
+body {
+    font-family: 'Cairo', sans-serif;
+    text-transform: capitalize;
+    background-color: var(--white);
+    height: 100%;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input, textarea {
+    outline: none;
+    background: none;
+    width: 100%;
+}
+
+/* Special Button */
+.btn {
+    background-color: var(--main-color);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    border-radius: 3px;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 600;
+}
+.btn span, .btn i {
+    padding-right: 3px;
+    pointer-events: none;
+}
+/*==============================================================*/
+/* Start Note Taking */
+#note-taking {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#note-taking .note-taking-container > .title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#note-taking .note-taking-container .title .heading {
+    color: var(--black);
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+#note-taking .note-taking-container .title p {
+    color: var(--black-50);
+    padding-top: .5rem;
+}
+
+#note-taking .note-area .heading {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+#note-taking .note-area .note-title,
+#note-taking .note-area {
+    margin-bottom: 1rem;
+}
+
+#note-taking .note-area .note-title .error-msg {
+    background-color: #eee;
+    color: var(--black);
+    width: fit-content;
+    margin-top: .5rem;
+    padding: 5px 10px;
+    border-radius: 2px;
+    list-style: inside square;
+    display: none;
+}
+
+#note-taking .note-area .note-title input[type="text"],
+#note-taking .note-area .note-content #note_content {
+    border: 1px solid var(--light);
+    caret-color: var(--main-color);
+    padding: 12px;
+    color: var(--black);
+    border-radius: 5px;
+    text-transform: capitalize;
+    transition: var(--trans);
+}
+
+#note-taking .note-area .note-title input[type="text"]:focus,
+#note-taking .note-area .note-content #note_content:focus {
+    border: 1px solid var(--main-color);
+}
+
+#note-taking .note-area .note-content #note_content {
+    height: 200px;
+    resize: none;
+}
+
+#note-taking .note-area .note-content .error-msg {
+    background-color: #eee;
+    color: var(--black);
+    width: fit-content;
+    margin-top: .5rem;
+    padding: 5px 10px;
+    border-radius: 2px;
+    list-style: inside square;
+    display: none;
+}
+#note-taking .note-area .note-content .error-msg.show-msg,
+#note-taking .note-area .note-title .error-msg.show-msg {
+    display: block;
+}
+#note-taking .note-area .note-content .error-msg li,
+#note-taking .note-area .note-title .error-msg li {
+    font-size: 13px;
+    color: red;
+    letter-spacing: .5px;
+}
+
+#note-taking .note-area .add-note,
+#note-taking .notes-container .note .remove-note {
+    margin-top: 1rem;
+}
+
+#note-taking .notes-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    background-color: var(--main-color);
+    box-shadow: 0 2px 5px 0px rgb(0, 0, 0, 0.3);
+    border-radius: 3px;
+    width: 100%;
+    padding: 20px;
+    max-height: 400px;
+    margin: 2rem 0;
+    overflow: auto;
+}
+@media (max-width: 650px) {
+    #note-taking .notes-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+#note-taking .notes-container::-webkit-scrollbar {
+    display: none;
+}
+
+#note-taking .notes-container .note {
+    background-color: var(--white);
+    padding: 1.25rem;
+    border-radius: 3px;
+    filter: drop-shadow(1px 1px 5px rgb(0, 0, 0, 0.2));
+}
+
+#note-taking .notes-container .note .title {
+    color: var(--black);
+    margin-bottom: 15px;
+    padding-left: 5px;
+    font-size: 18px;
+    border-left: 3px solid var(--main-color);
+}
+
+#note-taking .notes-container .note .note-content {
+    color: var(--black-50);
+    font-size: 14px;
+    line-height: 1.6;
+}
+/* End Note Taking */
